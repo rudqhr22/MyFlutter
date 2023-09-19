@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/foundation.dart' as foundation;
 
-/*
+
 void main() {
   runApp(
     DevicePreview(
@@ -11,54 +10,65 @@ void main() {
     ),
   );
 }
-*/
 
-
-void main() {
-  //runApp();
-  //runApp(MaterialApp(home: Scaffold(appBar: AppBar(title: const Text("hello world")))));
-
-  runApp(const KApp());
-}
+//void main() => runApp(MyApp());
 
 
 class KApp extends StatelessWidget {
-  const KApp ({super.key});
+  const KApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return CupertinoApp(home: Scaffold(
-        appBar: CupertinoNavigationBar(middle: Text("Hello, World!")),
-        body: SamplePage(buttonText: "This is button",))
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(backgroundColor: Colors.yellow, title: Text("abc")),
+        body: Column(
+            children: [
+              TextButton(onPressed: ()=>{ print("click TextButton") }, child: Text('TextButton')),
+              OutlinedButton(onPressed: ()=>{ print("click OutlinedButton") }, child: Text('OutlinedButton')),
+              ElevatedButton(onPressed:  ()=>{ print("click ElevatedButton") }, child: Text('ElevatedButton')),
+              FloatingActionButton(onPressed: ()=>{ print("click FloatingActionButton") }, child: Icon(Icons.add),)
+              ,
+        ]),
+        bottomNavigationBar: const BottomAppBar(color: Colors.black, height: 20),
+    ));
+  }
+}
+
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        floatingActionButton: FloatingActionButton(
+          onPressed: (){},
+          child: Icon(Icons.add),
+        ),
+        body: Center(
+          child:Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                '알람시계',
+                style: TextStyle(
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.blueAccent,
+                ),
+              ),
+              IconButton(onPressed: () {},
+                icon: Icon(
+                  Icons.access_alarm,
+                ),
+                iconSize: 100,
+                color: Colors.indigo,
+              ),
+            ],
+          ),
+        ),
+      ),
     );
-}}
-
-class SamplePage extends StatefulWidget {
-  final String buttonText;
-
-  SamplePage({required this.buttonText});
-
-  @override
-  State<SamplePage> createState() => _SamplePageState();
-}
-
-class _SamplePageState extends State<SamplePage> {
-  int count = 0;
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(child:
-      Column(children: [
-         Text("$count"),
-         CupertinoButton(child: Text(this.widget.buttonText), onPressed: this.addCounter)
-      ],),);
-  }
-  void addCounter()
-  {
-    setState(() {
-      this.count++;
-    });
-
   }
 }
 
@@ -66,18 +76,6 @@ class _SamplePageState extends State<SamplePage> {
 
 
 
-class SampleBox extends StatelessWidget {
-  final Color color;
-  final String text;
 
-  const SampleBox({super.key, required this.color, required this.text});
 
-  @override
-  Widget build(BuildContext context) {
-    return DecoratedBox(
-      decoration: BoxDecoration( color : this.color),
-      child: Text(this.text),
-    );
-  }
-}
 

@@ -11,9 +11,12 @@ void main() {
   );
 }
 
+
 //void main() => runApp(MyApp());
 
 
+
+/*
 class KApp extends StatelessWidget {
   const KApp({super.key});
 
@@ -34,47 +37,90 @@ class KApp extends StatelessWidget {
     ));
   }
 }
+*/
 
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         floatingActionButton: FloatingActionButton(
-          onPressed: (){},
-          child: Icon(Icons.add),
+          onPressed: ()=>{},
+          child: const Icon(Icons.add),
         ),
-        body: Center(
-          child:Column(
+        body: SafeArea(
+          child: Center(
+            child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
-                '알람시계',
-                style: TextStyle(
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.w600,
-                  color: Colors.blueAccent,
+              Container(
+                decoration: BoxDecoration(
+                  color: Colors.lightGreen,
+                  border: Border.all(
+                    width: 16,
+                    color: Colors.black
+                  ),
+                  borderRadius: BorderRadius.circular(10.0)
+                ),
+                height: 100,
+                width: 100,
+              ),
+              Container(
+                decoration: BoxDecoration(
+                  color: Colors.lightGreen,
+                  border: Border.all(
+                      width: 16,
+                      color: Colors.blue
+                  ),
+                  borderRadius: BorderRadius.circular(10.0)
+                ),
+                height: 100,
+                width: 100,
+              ),
+              Container(
+                decoration: BoxDecoration(
+                    color: Colors.lightGreen,
+                    border: Border.all(
+                        width: 16,
+                        color: Colors.red
+                    ),
+                    borderRadius: BorderRadius.circular(10.0)
+                ),
+                height: 100,
+                width: 100,
+              ),
+              SizedBox(
+                width: 200.0,
+                height: 100.0,
+                child: Container(
+                  color: Colors.yellow,
+                  height: 40,
+                  width: 80,
                 ),
               ),
-              IconButton(onPressed: () {},
-                icon: Icon(
-                  Icons.access_alarm,
+              Container(
+                color: Colors.red,
+                margin: const EdgeInsets.all(40.0),
+                child: Padding(
+                  padding: const EdgeInsets.all(40),
+                  child: Container(
+                    color: Colors.indigoAccent,
+                    width: 50,
+                    height: 50,
+                  ),
                 ),
-                iconSize: 100,
-                color: Colors.indigo,
-              ),
+                ),
             ],
           ),
         ),
       ),
+      ),
     );
   }
 }
-
-
-
-
 
 
 

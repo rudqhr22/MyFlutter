@@ -54,36 +54,64 @@ class MyApp extends StatelessWidget {
         body: SafeArea(
           child: Center(
             child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            //mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              SizedBox(height: 40),
               Row(
-                mainAxisAlignment: MainAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Container(
-                    width: 100,
-                    height: 100,
-                    color: Colors.blue,
+
+                  Expanded(
+                    child: Container(
+                      width: 50,
+                      height: 50,
+                      color: Colors.green,
+                    ),
                   ),
-                  SizedBox(width: 100),
-                  Container(
-                      height: 100,
-                      width: 100,
-                      color: Colors.cyanAccent,
+                  Expanded(
+                    child: Container(
+                      width: 50,
+                      height: 50,
+                      color: Colors.green,
+                    ),
                   ),
-                  SizedBox(width: 100),
-                  Container(
-                    height: 100,
-                    width: 100,
-                    color: Colors.yellow,
-                  )
+                  Expanded(
+                    child: Container(
+                      width: 50,
+                      height: 50,
+                      color: Colors.green,
+                    ),
+                  ),
+                  Expanded(
+                    child: Container(
+                      width: 50,
+                      height: 50,
+                      color: Colors.green,
+                    ),
+                  ),
                 ],
-              )
-            ],
-            )
+              ),
+              SizedBox(height: 30),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Container(
+                      width: 50,
+                      height: 50,
+                      color: Colors.black,
+                    ),
+                    Container(
+                      width: 50,
+                      height: 50,
+                      color: Colors.black,
+                    ),
+              ],
+            )]
           ),
         ),
       ),
+    )
     );
   }
 }

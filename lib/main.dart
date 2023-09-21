@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:device_preview/device_preview.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:webview_flutter/webview_flutter.dart';
 
+WebViewController? _webViewController;
 
 void main() {
+
+  //앱실행할 준비가 완료 될떄까지 기달린다.
+  WidgetsFlutterBinding.ensureInitialized();
+
   runApp(
     DevicePreview(
       builder: (context) => MyApp(), // Wrap your app
@@ -15,29 +20,6 @@ void main() {
 //void main() => runApp(MyApp());
 
 
-
-/*
-class KApp extends StatelessWidget {
-  const KApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(backgroundColor: Colors.yellow, title: Text("abc")),
-        body: Column(
-            children: [
-              TextButton(onPressed: ()=>{ print("click TextButton") }, child: Text('TextButton')),
-              OutlinedButton(onPressed: ()=>{ print("click OutlinedButton") }, child: Text('OutlinedButton')),
-              ElevatedButton(onPressed:  ()=>{ print("click ElevatedButton") }, child: Text('ElevatedButton')),
-              FloatingActionButton(onPressed: ()=>{ print("click FloatingActionButton") }, child: Icon(Icons.add),)
-              ,
-        ]),
-        bottomNavigationBar: const BottomAppBar(color: Colors.black, height: 20),
-    ));
-  }
-}
-*/
 
 
 class MyApp extends StatelessWidget {

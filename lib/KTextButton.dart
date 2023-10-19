@@ -4,20 +4,10 @@ import 'package:webview_flutter/webview_flutter.dart';
 
 WebViewController? _webViewController;
 
-void main() {
-  //앱실행할 준비가 완료 될떄까지 기달린다.
-  WidgetsFlutterBinding.ensureInitialized();
-
-  runApp(
-    DevicePreview(
-      builder: (context) => MyApp(), // Wrap your app
-    ),
-  );
-}
 
 //void main() => runApp(MyApp());
 
-class MyApp extends StatelessWidget {
+class KTextButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
